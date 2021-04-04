@@ -1,0 +1,34 @@
+{% extends 'events/base.html' %}
+{% block content %}
+<center>
+
+<h1>Venues</h1>
+<br/>
+<table class="table table-striped table-hover table-bordered">
+<thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">ZipCode</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Web</th>
+      <th scope="col">EmailAdress</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for venue in venue_list %}
+<tr>
+      <th scope="row"><a href="{% url 'show-venue' venue.id %}">{{venue.id}}</a></th>
+      <td>{{venue.name}}</td>
+      <td>{{venue.address}}</td>
+      <td>{{venue.zip_code}}</td>
+      <td>{{venue.phone}}</td>
+      <td>{{venue.web}}</td>
+      <td>{{venue.emailadress}}</td>
+    </tr>
+    
+{% endfor %}
+
+</center>
+{% endblock %}

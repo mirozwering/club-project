@@ -1,0 +1,16 @@
+{% extends 'events/base.html' %}
+{% block content %}
+<center>
+{% if firstname %}
+<h2> Thanks {{ firstname }} {{ lastname }} for sending.</h2>
+<p>We will get back shortly</p>
+{% else %}
+<h1>Contact</h1>
+<form href="" method = POST>
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" class="btn btn-secondary" value="Send">
+</form>
+{% endif %}
+</center>
+{% endblock %}
